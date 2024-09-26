@@ -1,4 +1,4 @@
-"""
+
 # Capítulo 2 - Modelos e Campos
 
 Este módulo define um modelo Odoo e seus campos, utilizando a estrutura ORM (Object-Relational Mapping) do Odoo.
