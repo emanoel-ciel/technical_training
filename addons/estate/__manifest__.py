@@ -8,5 +8,6 @@
     'author': 'Emanoel Fuentes',
     'data': [
         'data/demo.xml',
+        'security/res_groups.xml',
     ]
 }
