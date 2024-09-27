@@ -1,0 +1,15 @@
+<record id="estate_property_demo_01" model="estate_property">
+    <field name="name">Demo Property</field>
+    <field name="description">This is a demo property</field>
+    <field name="postcode">10001</field>
+    <field name="date_availability">2016-01-01</field>
+    <field name="expected_price">1000000</field>
+    <field name="selling_price">1000000</field>
+    <field name="bedrooms">3</field>
+    <field name="living_area">100</field>
+    <field name="facades">2</field>
+    <field name="garage">1</field>
+    <field name="garden">1</field>
+    <field name="garden_area">50</field>
+    <field name="garden_orientation">south</field>
+</record>

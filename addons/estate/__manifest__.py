@@ -6,4 +6,7 @@
     'depends': ['base'],
     'application': True,
     'author': 'Emanoel Fuentes',
+    'data': [
+        'data/demo.xml',
+    ]
 }
