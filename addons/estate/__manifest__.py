@@ -7,12 +7,12 @@
     'application': True,
     'author': 'Emanoel Fuentes',
     'data': [
+        # Data
+        'data/res_groups.xml',
+        'data/demo.xml',
+
         # Security
         'security/ir.model.access.csv',
-        'security/res_groups.xml',
-
-        # Data
-        'data/demo.xml',
 
         # Views
         'views/estate_property_views.xml',
