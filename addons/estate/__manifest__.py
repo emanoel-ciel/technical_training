@@ -15,6 +15,8 @@
         'security/ir.model.access.csv',
 
         # Views
+        'views/estate_actions.xml',
+        'views/estate_menu.xml',
         'views/estate_property_views.xml',
     ]
 }

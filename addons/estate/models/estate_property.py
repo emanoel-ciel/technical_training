@@ -1,7 +1,5 @@
 from odoo import models, fields, api
-from logging import getLogger
 
-__logger = getLogger(__name__)
 
 class EstateProperty(models.Model):
     _name = 'estate.property'
@@ -36,8 +34,6 @@ class EstateProperty(models.Model):
     def _compute_date_availability(self):
         toDay = fields.Date.today()
         three_months_later = fields.Date.add(toDay, months=3)
-
-        __logger.info(f"***ATENÇÃO***: Dia atual é {toDay}, trê meses depois é {three_months_later}")
 
         for record in self:
             if record.date_availability:
