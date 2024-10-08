@@ -3,5 +3,8 @@
 <odoo>
     <menuitem id="estate_menuitem_root_id" name="Real Estate">
         <menuitem id="estate_menuitem_sub_menuitem_id" name="Estate" action="estate_property_action"/>
+        <menuitem id="estate_menuitem_sub_menuitem_settings_id" name="Settings">
+            <menuitem id="estate_menuitem_sub_menuitem_property_type_id" name="Property Type" action="estate_property_type_action"/>
+        </menuitem>
     </menuitem>
 </odoo>
