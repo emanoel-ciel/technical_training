@@ -18,18 +18,21 @@ class EstateProperty(models.Model):
     garden = fields.Boolean(string='Garden')
     garden_area = fields.Integer(string='Garden Area')
     garden_orientation = fields.Selection(
-        [('north', 'North'), ('south', 'South'), ('east', 'East'), ('west', 'West')],
-        string='Garden Orientation')
+        [('north', 'North'), 
+         ('south', 'South'), 
+         ('east', 'East'), 
+         ('west', 'West')], string='Garden Orientation')
     active = fields.Boolean(string='Active', default=True)
     state = fields.Selection(
-        [('new', 'New'), ('offer_received', 'Offer Received'), ('offer_accepted', 'Offer Accepted'),
-         ('sold', 'Sold'), ('canceled', 'Canceled')],
-        string='Status', default='new')
+        [('new', 'New'), 
+         ('offer_received', 'Offer Received'), 
+         ('offer_accepted', 'Offer Accepted'),
+         ('sold', 'Sold'), 
+         ('canceled', 'Canceled')], string='Status', default='new')
     estate_property_type_id = fields.Many2one('estate.property.type', string='Property Type')
     buyer_id = fields.Many2one('res.partner', string='Buyer', copy=False)
     salesperson_id = fields.Many2one('res.users', string='Salesperson')
-
-
+    offer_ids = fields.One2many('estate.property.offer', 'property_id', string='Offers', required=True)
 
     @api.onchange('date_availability')
     def _compute_date_availability(self):
@@ -39,3 +42,15 @@ class EstateProperty(models.Model):
         for record in self:
             if record.date_availability:
                 record.date_availability = three_months_later
+
+
+class EstatePropertyOffer(models.Model):
+    _name = 'estate.property.offer'
+    _description = 'Real Estate Property Offer'
+
+    price = fields.Float(string='Price')
+    status = fields.Selection(
+        [('accepted', 'Accepted'), 
+         ('refused', 'Refused')], string='Status', copy=False)
+    partner_id = fields.Many2one('res.partner', string='Partner', required=True)
+    property_id = fields.Many2one('estate.property', string='Property', required=True)
