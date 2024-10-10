@@ -25,9 +25,9 @@ class EstateProperty(models.Model):
         [('new', 'New'), ('offer_received', 'Offer Received'), ('offer_accepted', 'Offer Accepted'),
          ('sold', 'Sold'), ('canceled', 'Canceled')],
         string='Status', default='new')
-    # estate_property_type_id = fields.Many2one('estate.property.type', string='Property Type')
-
-
+    estate_property_type_id = fields.Many2one('estate.property.type', string='Property Type')
+    buyer_id = fields.Many2one('res.partner', string='Buyer', copy=False)
+    salesperson_id = fields.Many2one('res.users', string='Salesperson')
 
 
 

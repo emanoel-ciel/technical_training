@@ -52,6 +52,12 @@
                                 <field name="garden_area"/>
                             </group>
                         </page>
+                        <page string="Other Info">
+                            <group name="relacional_contacts" string="Users">
+                                <field name="salesperson_id"/>
+                                <field name="buyer_id"/>
+                            </group>
+                        </page>
                     </notebook>
                 </sheet>
             </form>
